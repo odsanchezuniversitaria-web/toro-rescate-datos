@@ -4,7 +4,7 @@ Juego educativo en Unity 6000.3.25f1: mapa 3D isométrico y laboratorios 2D para
 
 [Jugar en el navegador](https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/)
 
-Ocho niveles: requisitos, campos y claves, relaciones, normalización, creación de tablas, carga de registros, consultas e integración de la academia. Cada construcción puede probarse y repararse. Incluye SQL descargable, voces en español, efectos, progreso guardado, medallas, puntuación y récords locales.
+Ocho niveles: requisitos, campos y claves, relaciones, normalización, creación de tablas, carga de registros, consultas e integración de la academia. Cada construcción puede probarse y repararse. Incluye un tutorial práctico, enseñanza al entrar en cada nivel y pistas progresivas que explican y señalan el siguiente paso sin quitar puntos. No usa cuestionarios. Incluye SQL descargable, voces en español, efectos, progreso guardado, medallas, puntuación y récords locales.
 
 El contenido adapta el esquema de 14 tablas del taller TORO con datos ficticios. El laboratorio simula operaciones relacionales limitadas; no es un servidor MySQL ni un editor SQL general. El arcade de disparos y saltos permanece como actividad opcional.
 
