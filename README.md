@@ -1,3 +1,7 @@
+# Nuevo minijuego: Conectar circuitos
+
+La entrada principal abre tres rondas de cables con nueve relaciones de TORO. Arrastra en celular/PC; en WebXR apunta con el mando, mantén el gatillo y suelta en el destino. Incluye demo, pistas, combo, medallas, récord y guardado. El botón TALLERES conserva el laboratorio de apoyo. Las pruebas de celular y Quest usan emulación, no hardware físico.
+
 # TORO: Construye la academia
 
 Juego educativo en Unity 6000.3.25f1: mapa 3D isométrico y laboratorios 2D para construir una base de datos.
@@ -21,3 +25,4 @@ El progreso y los récords se guardan en este navegador. Borrar sus datos elimin
 ## Publicación
 
 Este repositorio contiene exclusivamente el build web en `site/` y el workflow de GitHub Pages. No incluye el PDF, datos personales ni el proyecto fuente. Cada cambio en main publica el sitio mediante GitHub Actions.
+
