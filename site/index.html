@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#050c1d">
-<meta name="description" content="Recupera datos, salta cortafuegos y destruye corrupción. Juega TORO en PC, celular o realidad virtual WebXR.">
-<title>TORO · Rescate de Datos</title>
+<meta name="description" content="Construye la base de datos de la academia TORO: tablas, claves, normalización y consultas mediante ocho niveles interactivos. PC, celular y WebXR.">
+<title>TORO · Construye la academia</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050c1d'/%3E%3Cpath d='M12 15h40v10H37v27H27V25H12z' fill='%234ceff2'/%3E%3C/svg%3E">
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050c1d;color:#edf7ff;font-family:Arial,sans-serif}body{display:grid;place-items:center;overscroll-behavior:none}
-#unity-canvas{display:block;width:min(100vw,177.77778vh);height:min(100vh,56.25vw);outline:0;background:#050c1d;touch-action:none}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050c1d;color:#edf7ff;font-family:Arial,sans-serif}body{display:grid;place-items:center;overscroll-behavior:none;padding-bottom:48px}
+#unity-canvas{display:block;width:min(100vw,calc((100vh - 48px)*1.7777778));height:min(calc(100vh - 48px),56.25vw);outline:0;background:#050c1d;touch-action:none}
 #loading,.overlay{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 65%,#10213d,#050c1d 65%);z-index:4;text-align:center;padding:24px}
 #loading h1{font-size:clamp(64px,12vw,130px);letter-spacing:.14em;margin:0;padding-left:.14em}#loading h2{font-size:clamp(16px,3vw,26px);letter-spacing:.18em;color:#4ceff2;margin:8px 0 42px}
 .track{width:min(400px,75vw);height:4px;background:#183345}.fill{height:100%;width:0;background:#4ceff2;box-shadow:0 0 20px #4ceff2;transition:width .2s}#status{margin:24px 30px;max-width:700px;font-size:14px;letter-spacing:.06em;color:#9fb5cb}
@@ -17,16 +17,16 @@ button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visibl
 #web-tools{position:fixed;right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));display:flex;gap:6px;z-index:2}#web-tools button{background:#0a172cee;color:#4ceff2;border:1px solid #315066;padding:8px 10px;min-height:38px;font-size:11px;border-radius:4px}#web-tools button:hover{background:#193554}
 #rotate{display:none;z-index:5}.overlay h2{font-size:28px;color:#4ceff2;margin-bottom:8px}.overlay p{max-width:520px;line-height:1.6;color:#bacbdc}.primary{background:#4ceff2;color:#031522;border:0;padding:14px 24px;font-weight:bold;margin-top:16px;border-radius:4px}
 #vr-help{display:none;background:#030918ed;z-index:6}#vr-help .card{max-width:620px;border:1px solid #4ceff2;background:#0b172d;padding:28px;text-align:left}#vr-help h2{margin-top:0}#vr-message{white-space:pre-line}#vr-close{width:100%}
-@media(pointer:coarse){body{padding-right:76px}#unity-canvas{width:min(calc(100vw - 76px),177.77778vh);height:min(100vh,calc((100vw - 76px)*.5625))}#web-tools{flex-direction:column;right:max(4px,env(safe-area-inset-right));bottom:8px}#web-tools button{padding:7px 5px;width:64px;min-height:44px;font-size:10px}#fullscreen span{display:none}}
+@media(pointer:coarse){body{padding-right:76px;padding-bottom:0}#unity-canvas{width:min(calc(100vw - 76px),177.77778vh);height:min(100vh,calc((100vw - 76px)*.5625))}#web-tools{flex-direction:column;right:max(4px,env(safe-area-inset-right));bottom:8px}#web-tools button{padding:7px 5px;width:64px;min-height:44px;font-size:10px}#fullscreen span{display:none}}
 @media(pointer:coarse) and (orientation:portrait){body.ready #rotate{display:flex}}
 @media(prefers-reduced-motion:reduce){.fill{transition:none}}
 </style>
 </head>
 <body>
-<canvas id="unity-canvas" tabindex="0" aria-label="TORO Rescate de Datos. A y D para moverte, espacio para saltar, J para disparar, E para pulso y Escape para pausa."></canvas>
-<div id="loading" role="status"><h1>TORO</h1><h2>RESCATE DE DATOS</h2><div class="track"><div class="fill" id="fill"></div></div><p id="status">SINCRONIZANDO EL SISTEMA…</p></div>
+<canvas id="unity-canvas" tabindex="0" aria-label="TORO Construye la academia. Selecciona piezas y destinos, prueba tu construcción y consulta el plano y SQL."></canvas>
+<div id="loading" role="status"><h1>TORO</h1><h2>CONSTRUYE LA ACADEMIA</h2><div class="track"><div class="fill" id="fill"></div></div><p id="status">PREPARANDO EL LABORATORIO…</p></div>
 <nav id="web-tools" aria-label="Opciones del navegador"><button id="enter-vr" disabled>VR · CARGANDO</button><button id="fullscreen" title="Pantalla completa" aria-label="Pantalla completa">⛶ <span>PANTALLA COMPLETA</span></button><button id="help" aria-label="Ayuda de controles">AYUDA</button></nav>
-<div id="rotate" class="overlay"><div style="font-size:64px;color:#4ceff2">↻</div><h2>Gira tu celular</h2><p>Juega en horizontal para ver la pista y usar los controles con ambos pulgares.</p><button class="primary" id="rotate-fullscreen">PANTALLA COMPLETA</button></div>
+<div id="rotate" class="overlay"><div style="font-size:64px;color:#4ceff2">↻</div><h2>Gira tu celular</h2><p>Construye en horizontal para ver las piezas, los destinos y el resultado de tus acciones.</p><button class="primary" id="rotate-fullscreen">PANTALLA COMPLETA</button></div>
 <div id="vr-help" class="overlay" role="dialog" aria-modal="true" aria-labelledby="help-title"><div class="card"><h2 id="help-title">CONTROLES TORO</h2><p id="vr-message"></p><button class="primary" id="vr-close">ENTENDIDO</button></div></div>
 <script>
 const canvas=document.getElementById('unity-canvas'),status=document.getElementById('status'),vrButton=document.getElementById('enter-vr');
@@ -37,7 +37,7 @@ window.onToroGameReady=()=>{if(!instance||!window.toroGameReady)return;document.
 const send=(method,arg='')=>{if(instance)instance.SendMessage('TORO · Game',method,arg);};
 function pause(){send('OnBrowserHidden');}
 function help(message){pause();document.getElementById('vr-message').textContent=message;document.getElementById('vr-help').style.display='flex';document.getElementById('vr-close').focus();}
-const helpText='PC: A/D o flechas para cambiar de carril. Espacio: doble salto. Mantén J o clic para disparar. E: pulso. Esc: pausa.\n\nCELULAR: gira a horizontal. Usa las flechas de la izquierda y SALTAR, DISPARAR y PULSO a la derecha. Puedes saltar mientras mantienes el disparo.\n\nVR: abre este enlace en el navegador del visor y pulsa ENTRAR EN VR. Usa los mandos; la vista sigue tu cabeza. Puedes salir desde el menú del navegador del visor.';
+const helpText='CONSTRUIR PROYECTO: selecciona una pieza y un destino. Prueba tu construcción, lee el resultado y repara los errores. PLANO y SQL muestran lo que construiste. El avance se guarda en este navegador.\n\nCELULAR: usa la pantalla horizontal. Los mismos botones funcionan al tocar.\n\nVR: abre el enlace en el navegador del visor y pulsa ENTRAR EN VR. Gatillo abre el taller. Stick recorre botones y gatillo confirma.\n\nARCADE OPCIONAL: A/D cambia de carril, Espacio salta, J dispara, E activa pulso, Esc pausa. El arcade no acredita los talleres.';
 async function fullscreen(){if(!instance)return;try{if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else instance.SetFullscreen(1);if(coarse()&&screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');}catch(e){}}
 document.getElementById('fullscreen').onclick=fullscreen;document.getElementById('rotate-fullscreen').onclick=fullscreen;
 document.getElementById('help').onclick=()=>help(helpText);
@@ -48,7 +48,7 @@ document.addEventListener('onVRSupportedCheck',event=>setVR(event.detail.support
 vrButton.onclick=()=>{if(!vrSupported){help('Para jugar en realidad virtual abre este mismo enlace HTTPS en un navegador WebXR compatible, por ejemplo el navegador de Meta Quest, y conecta los mandos.\n\nEste navegador no detecta un visor VR disponible. Puedes jugar normalmente en PC o celular.');return;}const xr=instance&&instance.Module&&instance.Module.WebXR;if(!xr||!xr.toggleVR){help('El sistema VR aún no está listo. Espera unos segundos y vuelve a intentarlo.');return;}try{const result=xr.toggleVR();if(result&&result.catch)result.catch(()=>help('No se pudo iniciar VR. Revisa los permisos del visor e inténtalo de nuevo.'));}catch(e){help('No se pudo iniciar VR. Revisa los permisos del visor e inténtalo de nuevo.');}};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
 window.addEventListener('resize',()=>{if(coarse()&&innerHeight>innerWidth)pause();});
-const config={dataUrl:'Build/Web.data.unityweb',frameworkUrl:'Build/Web.framework.js.unityweb',codeUrl:'Build/Web.wasm.unityweb',streamingAssetsUrl:'StreamingAssets',companyName:'TORO Academy',productName:'TORO - Rescate de Datos',productVersion:'1.1.0',devicePixelRatio:Math.min(window.devicePixelRatio||1,coarse()?1.35:2),showBanner:(msg,type)=>{if(type==='error'){status.textContent='No se pudo iniciar: '+msg;document.getElementById('loading').style.display='flex';}}};
+const config={dataUrl:'Build/Web.data.unityweb',frameworkUrl:'Build/Web.framework.js.unityweb',codeUrl:'Build/Web.wasm.unityweb',streamingAssetsUrl:'StreamingAssets',companyName:'TORO Academy',productName:'TORO - Construye la academia',productVersion:'2.0.0',devicePixelRatio:Math.min(window.devicePixelRatio||1,coarse()?1.35:2),showBanner:(msg,type)=>{if(type==='error'){status.textContent='No se pudo iniciar: '+msg;document.getElementById('loading').style.display='flex';}}};
 const script=document.createElement('script');script.src='Build/Web.loader.js';
 script.onload=()=>createUnityInstance(canvas,config,p=>{document.getElementById('fill').style.width=(100*p)+'%';status.textContent='SINCRONIZANDO EL SISTEMA · '+Math.round(p*100)+'%';}).then(result=>{instance=result;window.toroUnity=result;status.textContent='ACTIVANDO CONTROLES…';window.onToroGameReady();}).catch(error=>{status.textContent='No se pudo iniciar TORO. Actualiza el navegador y vuelve a cargar la página. '+error;});
 script.onerror=()=>{status.textContent='No se pudo descargar la compilación. Revisa la conexión y recarga la página.';};document.body.appendChild(script);

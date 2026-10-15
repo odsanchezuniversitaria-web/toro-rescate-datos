@@ -1,33 +1,23 @@
-# TORO: Rescate de Datos
+# TORO: Construye la academia
 
-Juego educativo de acción con estética tecnológica, creado en Unity 6000.3.25f1.
+Juego educativo en Unity 6000.3.25f1: mapa 3D isométrico y laboratorios 2D para construir una base de datos.
 
-**Jugar:** https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/
+[Jugar en el navegador](https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/)
 
-Recupera datos, salta obstáculos, destruye drones y protege la integridad de una academia virtual. Incluye tres sectores, jefe final, combos, partículas, música y voces en español. Las situaciones del juego representan conceptos de bases de datos mediante una simulación.
+Ocho niveles: requisitos, campos y claves, relaciones, normalización, creación de tablas, carga de registros, consultas e integración de la academia. Cada construcción puede probarse y repararse. Incluye SQL descargable, voces en español, efectos, progreso guardado, medallas, puntuación y récords locales.
 
-## Controles de escritorio
+El contenido adapta el esquema de 14 tablas del taller TORO con datos ficticios. El laboratorio simula operaciones relacionales limitadas; no es un servidor MySQL ni un editor SQL general. El arcade de disparos y saltos permanece como actividad opcional.
 
-- A/D o flechas: cambiar de carril.
-- Espacio: saltar y doble salto.
-- J o clic sostenido: disparar.
-- E: pulso.
-- Esc: pausa.
+## Controles
 
-La página ofrece la interacción disponible para el dispositivo y navegador. Para el modo Web VR se necesita un navegador con WebXR y un visor compatible; la página se sirve mediante HTTPS.
+PC: seleccionar piezas y destinos con el ratón; probar la construcción y consultar el plano o SQL. En el mapa, elegir un edificio y entrar al nivel disponible.
 
-## Celular
+Celular: horizontal y botones táctiles.
 
-Gira a horizontal y usa las flechas, SALTO x2, FUEGO y PULSO. Puedes mantener el disparo mientras saltas con otro dedo. La página recomienda girar cuando está en vertical.
+WebXR: entrar en VR desde un navegador y visor compatibles, navegar botones con el stick y confirmar con el gatillo. El progreso del laboratorio se conserva al salir de VR.
 
-## Visor WebXR
-
-Pulsa ENTRAR EN VR desde el navegador del visor. Gatillo para iniciar/disparar/reintentar, stick para cambiar de carril, A/X para saltar, B/Y para pulso y agarre izquierdo para pausar o continuar. Al salir de VR la partida vuelve a 2D en pausa. El personaje salta; la plataforma de observación permanece fija.
-
-Las pruebas automatizadas de VR utilizan IWER con Meta Quest 3 emulado; no representan una validación con un visor físico. Las licencias de terceros se incluyen en `site/ThirdPartyNotices.txt`.
+El progreso y los récords se guardan en este navegador. Borrar sus datos elimina ese guardado. Las pruebas de teléfono y visor son emuladas; no sustituyen comprobaciones en hardware físico.
 
 ## Publicación
 
-Este repositorio contiene únicamente los archivos compilados para navegador, en `site/`, y el workflow de GitHub Pages. El proyecto de Unity, el PDF de referencia y los archivos locales de validación no forman parte de la publicación.
-
-Cada cambio en `main` publica `site/` mediante GitHub Actions. La configuración de Pages usa **GitHub Actions** como origen.
+Este repositorio contiene exclusivamente el build web en `site/` y el workflow de GitHub Pages. No incluye el PDF, datos personales ni el proyecto fuente. Cada cambio en main publica el sitio mediante GitHub Actions.
