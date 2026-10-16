@@ -2,7 +2,7 @@
 
 Juego educativo en Unity 6000.3.25f1: mapa 3D isométrico y laboratorios 2D para construir una base de datos.
 
-[Jugar en el navegador](https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/?v=2.3.0)
+[Jugar en el navegador](https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/?v=2.3.1)
 
 Ocho niveles: requisitos, campos y claves, relaciones, normalización, creación de tablas, carga de registros, consultas e integración de la academia. Cada construcción puede probarse y repararse. Incluye un tutorial práctico, enseñanza al entrar en cada nivel y pistas progresivas que explican y señalan el siguiente paso sin quitar puntos. No usa cuestionarios. Incluye SQL descargable, voces en español, efectos, progreso guardado, medallas, puntuación y récords locales.
 
@@ -35,3 +35,8 @@ Cada nivel verificado muestra Repetir nivel / Siguiente nivel. Repetir usa una c
 Desarrollador, en el menú inicial, abre un teclado accesible con toque o rayos XR. El código 1508 habilita los ocho niveles con sus prerrequisitos válidos en una partida temporal. No modifica el guardado de campaña ni sus récords. Salir al menú o recargar termina ese modo. Es una comodidad de pruebas local, no un mecanismo de seguridad.
 
 El nivel 1 conserva voz en español, efectos de impacto, partículas y feedback contextual. Los demás siete niveles conservan sus mecánicas de construcción existentes.
+
+
+## 2.3.1 · Créditos
+
+La pantalla de inicio incluye: hecho por Oscar Sanchez y Angie Fajardo. Visible en PC, celular y el menú inmersivo.
