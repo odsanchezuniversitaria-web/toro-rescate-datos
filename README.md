@@ -2,7 +2,7 @@
 
 Juego educativo en Unity 6000.3.25f1: mapa 3D isométrico y laboratorios 2D para construir una base de datos.
 
-[Jugar en el navegador](https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/?v=2.3.1)
+[Jugar en el navegador](https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/)
 
 Ocho niveles: requisitos, campos y claves, relaciones, normalización, creación de tablas, carga de registros, consultas e integración de la academia. Cada construcción puede probarse y repararse. Incluye un tutorial práctico, enseñanza al entrar en cada nivel y pistas progresivas que explican y señalan el siguiente paso sin quitar puntos. No usa cuestionarios. Incluye SQL descargable, voces en español, efectos, progreso guardado, medallas, puntuación y récords locales.
 
@@ -40,3 +40,14 @@ El nivel 1 conserva voz en español, efectos de impacto, partículas y feedback 
 ## 2.3.1 · Créditos
 
 La pantalla de inicio incluye: hecho por Oscar Sanchez y Angie Fajardo. Visible en PC, celular y el menú inmersivo.
+
+
+## 2.4.0 · como y para que? (2026-10-16)
+
+El menú inicial añade una sección de tres minijuegos independientes sobre el propósito de TORO. No son cuestionarios y no modifican el progreso de la campaña:
+
+1. **Inscribe y conecta:** arrastra los módulos Nova 103, matrícula 503 y pago 703 a sus tablas en el orden que permiten las FK. Carrera 10 y el resto del esquema ya existen. El resultado muestra para qué sirven las relaciones: seguir desde un estudiante hasta su matrícula y su pago.
+2. **Defensa de ingresos:** dispara a drones de pagos Aprobado para incorporarlos al informe. El pago Pendiente de 80000 se conserva y no suma. El total correcto es 120000 + 50000 + 45000 = 215000. Enseña WHERE y SUM; disparar no elimina registros de la base.
+3. **Ensambla el programa:** coloca cinco módulos en una secuencia de ejemplo: CREATE estudiantes, CREATE matriculas, INSERT estudiante, INSERT matrícula, SELECT + JOIN. Esta secuencia muestra dependencias; no es una afirmación de que exista una sola secuencia SQL posible.
+
+Cada misión tiene guía inicial, pistas gratuitas, voz en español, código ilustrativo, partículas, puntaje, récord local y repetir/siguiente. Los fragmentos SQL con ... están abreviados; los datos son ficticios. En celular se arrastra con el dedo; en VR se mantiene el gatillo para arrastrar y se pulsa para disparar. La URL compartida permanece https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/ .
