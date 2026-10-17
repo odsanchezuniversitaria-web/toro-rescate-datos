@@ -55,3 +55,7 @@ Cada misión tiene guía inicial, pistas gratuitas, voz en español, código ilu
 
 ### 2.4.1 — Voces y efectos
 Retroalimentación hablada en español, sonidos distintos para aciertos y errores, y frase de cierre en cada nivel o ronda completada, también al repetir.
+
+
+### 2.5.0 — Laberinto del estudiante
+En «como y para que?» abre «NUEVO: LABERINTO». Mueve a Nova con WASD o flechas, o con botones táctiles/rayos VR. Recorre inscripción, dos cursos, notas y certificado; hay pistas, voces, puntaje, récord y repetición. La matrícula existe previamente; certificados conserva su relación con matriculas del proyecto original.
