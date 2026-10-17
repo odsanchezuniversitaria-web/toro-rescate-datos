@@ -51,3 +51,7 @@ El menú inicial añade una sección de tres minijuegos independientes sobre el 
 3. **Ensambla el programa:** coloca cinco módulos en una secuencia de ejemplo: CREATE estudiantes, CREATE matriculas, INSERT estudiante, INSERT matrícula, SELECT + JOIN. Esta secuencia muestra dependencias; no es una afirmación de que exista una sola secuencia SQL posible.
 
 Cada misión tiene guía inicial, pistas gratuitas, voz en español, código ilustrativo, partículas, puntaje, récord local y repetir/siguiente. Los fragmentos SQL con ... están abreviados; los datos son ficticios. En celular se arrastra con el dedo; en VR se mantiene el gatillo para arrastrar y se pulsa para disparar. La URL compartida permanece https://odsanchezuniversitaria-web.github.io/toro-rescate-datos/ .
+
+
+### 2.4.1 — Voces y efectos
+Retroalimentación hablada en español, sonidos distintos para aciertos y errores, y frase de cierre en cada nivel o ronda completada, también al repetir.
